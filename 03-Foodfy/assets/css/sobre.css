@@ -1,0 +1,22 @@
+@import 'main.css';
+
+.sobre {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.sobre h1 {
+  margin-bottom: 20px;
+}
+.sobre li {
+  margin-bottom: 50px;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 960px) {
+  .footer {
+    position: initial;
+  }
+}

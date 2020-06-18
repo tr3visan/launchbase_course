@@ -1,0 +1,142 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+
+:root {
+  --font-family: Roboto, sans-serif;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-700: 700;
+  --nude: #FBDFDB;
+  --tomato: #D54F44;
+  --primary-black: #111;
+  --second-black: rgb(99, 99, 99);
+  --gray: #EEE;
+  --container: 960px;
+  --box-radius-15: 15px;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+  color: var(--primary-black);
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+p {
+  line-height: 26px;
+}
+h1 {
+  font-size: 32px;
+  line-height: 42px;
+}
+h2 {
+  margin-bottom: 20px;
+}
+h3 {
+  color: var(--second-black);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: var(--fw-300);
+}
+h4 {
+  font-size: 18px;
+  line-height: 28px;
+  -webkit-transition: color .1s ease-in-out;
+  -o-transition: color .1s ease-in-out;
+  transition: color .1s ease-in-out;
+}
+h5 {
+  color: var(--second-black);
+  font-weight: var(--fw-300);
+}
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.nav-links {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+}
+.nav-links a {
+  color: var(--primary-black);
+  padding: .5rem 1rem;
+  -webkit-transition: color .1s linear;
+  -o-transition: color .1s linear;
+  transition: color .1s linear;
+}
+.nav-links a:hover {
+  color: var(--tomato)
+}
+.footer {
+  padding: 22px 0;
+  background-color: var(--gray);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footer p {
+  font-size: 12px;
+  opacity: 0.5;
+}
+.bg-section {
+  background-image: url(/assets/svg/chefs-hat.svg);
+  background-repeat: no-repeat;
+  background-position: right 600px;
+}
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  h3 {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: var(--fw-300);
+  }
+  h4 {
+    font-size: 14px;
+    line-height: 23px;
+    -webkit-transition: color .1s ease-in-out;
+    -o-transition: color .1s ease-in-out;
+    transition: color .1s ease-in-out;
+  }
+}
