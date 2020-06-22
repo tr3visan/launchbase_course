@@ -20,4 +20,3 @@ cards.forEach(card => {
 })
 
 btnClose.addEventListener('click', closeModal)
-

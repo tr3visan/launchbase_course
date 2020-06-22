@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>TR3VISAN - Video</title>
+{% endblock %}
+
+{% block content %}
+  <section class="wrapper">
+    <h2>{{ item.title }}</h2>
+  </section>
+
+    <section class="video">
+
+      <div class="card" id="{{ item.id }}">
+        <div class="card__video-container {{ 'featured' if item.featured }}">
+          <iframe src="https://www.youtube.com/embed/{{item.id}}" frameborder="0"></iframe>
+          {% if item.featured %}
+            <div class="featured-icon">Featured</div>
+          {% endif %}
+        </div>
+        <div class="card__content">
+          <p>{{ item.title }}</p>
+        </div>
+        <div class="card__info">
+          <p>{{ item.duration }}</p>
+          <p class="card__price">{{ item.price }}</p>
+        </div>
+      </div>
+
+  </section>
+  
+{% endblock %}

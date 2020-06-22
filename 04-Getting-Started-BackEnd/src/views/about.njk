@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <title>TR3VISAN - About</title>
+{% endblock %}
+
+{% block content %}
+
+  <section class="wrapper">
+    <img src="{{ about.avatar }}" alt="{{ about.name - about.username  }}">
+    <h4>@{{ about.username }}</h4>
+    <h1>{{ about.name }}</h1>
+    <h3>{{ about.role }}</h3>
+    <p>{{ about.description }}</p>
+  </section>
+
+  <section class="social-content">
+    <nav class="links social">
+      {% for link in about.social %}
+        <a class="logo-social" href="{{ link.url }}{{ about.username }}" title="{{ link.name }}" target="_blank" rel="noopener noreferrer">
+          <img class="svg" src="assets/svg/{{ link.name }}.svg" alt="Logo {{ link.name }}">
+        </a>
+      {% endfor %}
+    </nav>
+  </section>
+
+{% endblock %}
