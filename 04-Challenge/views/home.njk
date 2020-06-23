@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="wrapper">
+    <img src="{{ about.avatar }}" alt="{{ about.name - about.username }}">
+    <h4>@{{ about.username }}</h4>
+    <h1>{{ about.name }}</h1>
+    <h3>{{ about.role }}</h3>
+    <p>{{ about.description }}</p>
+  </section>
+
+  <section class="social-content">
+    <nav class="links social">
+      {% for item in about.social %}
+        <a class="logo-social" href="{{ item.url }}" title="{{ item.name }}" target="_blank" rel="noopener noreferrer">
+          <img class="svg" src="assets/svg/{{ item.name }}.svg" alt="Logo {{ item.name }}">
+        </a>
+      {% endfor %}
+    </nav>
+  </section>
+{% endblock %}
+

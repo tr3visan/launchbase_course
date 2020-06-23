@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <title>TR3VISAN</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+
+  {% block header %}
+    <header class="header">
+      <nav class="links">
+        <a href="/">About</a>
+        <a href="/courses">Courses</a>
+      </nav>
+    </header>
+  {% endblock %}
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Development by tr<span class="tr3">3</span>visan</p>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  <section class="course">
+
+    <h1>{{ item.title }}</h1>
+
+      <div class="card" id="{{ item.id }}">
+        <div class="card__img-container">
+          <img src="{{ item.source }}" alt="{{ item.title }}">
+        </div>
+        <div class="card__content">
+          <p>{{ item.title }}</p>
+        </div>
+        <div class="card__info">
+          <p>{{ item.time }}</p>
+          <p class="card__price">{{ item.price }}</p>
+        </div>
+      </div>
+      
+  </section>
+
+{% endblock %}

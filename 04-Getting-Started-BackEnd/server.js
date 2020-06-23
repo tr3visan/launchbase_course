@@ -45,6 +45,10 @@ server.get('/video', (req, res, next) => {
   return res.render('video', { item: video })
 })
 
+server.use((req, res) => {
+  res.status(404).render('not-found')
+})
+
 server.listen(5000, () => {
   console.log('Server is running: http://localhost:5000')
 })
