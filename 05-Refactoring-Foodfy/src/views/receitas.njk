@@ -1,0 +1,42 @@
+{% extends "layout.njk" %}
+
+{% block style %}
+  <link rel="stylesheet" href="/assets/css/receitas.css">
+{% endblock %}
+
+{% block content %}
+
+  <section class="main-recipies container">
+    <h2>Receitas</h2>
+
+    <div class="cards">
+      {% for item in recipies %}
+        
+        <div class="card" data-type="{{ item.name }}" data-index="{{ loop.index0 }}" data-anime="top">
+          <div class="card__box-img">
+            <img src="/assets/img/{{ item.name }}.png" alt="Foto Hamburguer">
+          </div>
+          <div class="card__box-body">
+            <sup>{{ item.hate }}</sup>
+            <h4>{{ item.title }}</h4>
+            <h5>{{ item.author }}</h5>
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+  </section>
+
+  <script src="/assets/js/script.js"></script>
+
+{% endblock %}
+
+
+{% block footer %}
+  <footer class="footer" data-class="receitas">
+    <p>Todos os direitos reservados, receitas Foodfy</p>
+  </footer>
+{% endblock %}
+
+
+

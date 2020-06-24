@@ -1,0 +1,44 @@
+@import 'main.css';
+@import 'home.css';
+
+/*** receita ***/
+.recipe {
+  min-height: 740px;
+}
+.recipe .card .card__box-img {
+  height: 300px;
+}
+.recipe .card .card__box-body {
+  text-align: center;
+}
+.recipe .card h4 {
+  opacity: .5;
+}
+.recipe h2 {
+  margin-bottom: 0;
+  margin-right: 1rem;
+}
+.recipe .information:not(:last-child){
+  margin-bottom: 2rem;
+}
+.recipe .information .head {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.recipe ul {
+  padding-left: 1rem;
+}
+.recipe ul li {
+  list-style-type: disc;
+}
+.recipe .information .btn {
+  display: flex;
+  align-items: center;
+  color: var(--tomato);
+}
+
+.recipe .information .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+}

@@ -1,0 +1,90 @@
+{% extends "layout.njk" %}
+
+{% block style %}
+  <link rel="stylesheet" href="/assets/css/receita.css">
+{% endblock %}
+
+{% block content %}
+
+  <section class="main-recipies container">
+
+    <div class="recipe">
+        
+        <div class="card" data-type="{{ item.name }}">
+          <div class="card__box-img">
+            <img src="/assets/img/{{ item.name }}.png" alt="Foto Hamburguer">
+          </div>
+          <div class="card__box-body">
+            <sup>{{ item.hate }}</sup>
+            <h1>{{ item.title }}</h1>
+            <h4>por {{ item.author }}</h4>
+          </div>
+        </div>
+
+        {% if item.ingredients.length > 0 %}
+          <div class="information">
+            <div class="head">
+              <h2>Ingredientes</h2>
+              <button class="btn" data-id="ingredients">
+                <span>Ver mais</span>
+                <i class="material-icons">keyboard_arrow_down</i>
+              </button>
+            </div>
+            <div class="content" id="ingredients">
+              <ul>
+                {% for item in item.ingredients %}
+                  <li>
+                    <p>{{item}}</p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if item.preparation.length > 0 %}
+          <div class="information">
+            <div class="head">
+              <h2>Modo de preparo</h2>
+              <button class="btn" data-id="preparo">
+                <span>Ver mais</span>
+                <i class="material-icons">keyboard_arrow_down</i>
+              </button>
+            </div>
+            <div class="content" id="preparo">
+              <ul>
+                {% for item in item.preparation %}
+                  <li>
+                    <p>{{item}}</p>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if item.information != '' %}
+          <div class="information">
+            <div class="head">
+              <h2>Informações adicionais</h2>
+              <button class="btn" data-id="adicionais">
+                <span>Ver mais</span>
+                <i class="material-icons">keyboard_arrow_down</i>
+              </button>
+            </div>
+            <div class="content" id="adicionais">
+              <p>{{ item.information }}</p>
+            </div>
+          </div>
+        {% endif %}
+
+    </div>
+  </section>
+
+  <script src="/assets/js/script.js"></script>
+
+{% endblock %}
+
+
+
+

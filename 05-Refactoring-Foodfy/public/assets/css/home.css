@@ -1,0 +1,145 @@
+@import 'main.css';
+
+.banner {
+  background-color: var(--nude);
+  border-radius: var(--box-radius-15);
+  min-height: 366px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 50px;
+  position: relative;
+  padding-left: 16px;
+}
+.banner::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: var(--tomato);
+  background-image: url(/assets/svg/cutlery.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 30px 0 0;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+.banner .title-main {
+  max-width: 320px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.banner .title-main h1 {
+  margin-bottom: 18px;
+}
+.banner .mascote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+/*** cards ***/
+.main-recipies {
+  padding-bottom: 3rem;
+}
+.cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.card {
+  position: relative;
+  border-radius: var(--box-radius-15);
+}
+.card[data-anime] {
+  opacity: 0;
+  transform: translate3d(0, -50px, 0);
+  transition: all .5s linear;
+}
+.card[data-anime="top"].anime {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.card[data-type]::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-color: var(--tomato);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 20px 0 0;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  -webkit-box-shadow: 0 3px 5px #00000056;
+          box-shadow: 0 3px 5px #00000056;
+}
+.card[data-type="burger"]::after,
+.card[data-type="burger-2"]::after {
+  background-image: url(/assets/svg/cheese-burger.svg);
+}
+.card[data-type="pizza"]::after,
+.card[data-type="pizza-2"]::after {
+  background-image: url(/assets/svg/pizza.svg);
+}
+.card[data-type="espaguete"]::after,
+.card[data-type="espaguete-2"]::after  {
+  background-image: url(/assets/svg/espaguete.svg);
+}
+.card[data-type="lasanha"]::after,
+.card[data-type="lasanha-2"]::after  {
+  background-image: url(/assets/svg/lasagna.svg);
+}
+.card[data-type="doce"]::after,
+.card[data-type="doce-2"]::after {
+  background-image: url(/assets/svg/cake.svg);
+}
+.card[data-type="asinhas"]::after,
+.card[data-type="asinhas-2"]::after  {
+  background-image: url(/assets/svg/chicken-leg.svg);
+}
+.card .card__box-img {
+  width: 100%;
+  height: 140px;
+  border-radius: var(--box-radius-15);
+  overflow: hidden;
+}
+.card .card__box-img img,
+.modal .box-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.card .card__box-body {
+  padding: 20px;
+}
+
+@media (max-width: 960px) {
+  .cards {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .cards {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}

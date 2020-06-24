@@ -1,0 +1,17 @@
+@import 'main.css';
+@import 'home.css';
+
+.main-recipies {
+  min-height: 780px;
+}
+
+.main-recipies .card {
+  cursor: pointer;
+}
+.main-recipies .card:hover {
+  -webkit-box-shadow: 3px 3px 20px rgba(238, 238, 238, 0.4);
+          box-shadow: 3px 3px 20px rgba(238, 238, 238, 0.4);
+}
+.main-recipies .card:hover h4 {
+  color: var(--tomato);
+}

@@ -1,0 +1,12 @@
+@import 'main.css';
+
+.footer[data-class="not-found"] {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+@media (max-width: 960px) {
+  .footer[data-class="not-found"] {
+    position: initial;
+  }
+}
