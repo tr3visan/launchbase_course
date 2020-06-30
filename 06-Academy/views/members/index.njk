@@ -1,0 +1,46 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="container">
+    <div class="card table-container" data-element="green">
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th>Membro</th>
+              <th>E-mail</th>
+              <th>Peso</th>
+              <th>Altura</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for member in members %}
+              <tr>
+                <td>
+                  <span>
+                    <img src="{{member.avatar_url}}" alt="">
+                  </span>
+                  <span>{{ member.name }}</span>
+                </td>
+                <td>{{ member.email }}</td>
+                <td>{{ member.weigth }}Kg</td>
+                <td>{{ member.height }}cm</td>
+                <td>
+                  <a class="btn-table" href="/members/{{member.id}}">
+                    <i class="material-icons">folder_shared</i>
+                    <span>ver</span>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <a class="btn add" href="/members/create" title="Adicione um Instrutor">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="container">
+    <div class="card" data-element="green">
+      <div class="avatar">
+        <img src="{{ instructor.avatar_url }}" alt="{{ instructor.name }}">
+      </div>
+      <div class="details">
+        <h2 class="h2">Detalhes</h2>
+        <div class="item">
+          <h4 class="h4">Instrutor</h4>
+          <p>{{ instructor.name }}</p>
+        </div>
+        <div class="item">
+          <h4 class="h4">Idade</h4>
+          <p>{{ instructor.age }}</p>
+        </div>
+        <div class="item">
+          <h4 class="h4">Sexo</h4>
+          {% if instructor.gender === 'M' %}
+            <p>Masculino</p>
+          {% elif instructor.gender === 'F' %}
+            <p>Feminino</p>
+          {% else %}
+            <p>Prefiro não dizer</p>
+          {% endif %}
+        </div>
+        <div class="item">
+          <h4 class="h4">Modality</h4>
+          <div class="budgets">
+            {% for modality in instructor.modality %}
+              <span>{{ modality }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="item">
+          <h4 class="h4">Since</h4>
+          <p>{{ instructor.created_at }}</p>
+        </div>
+        
+        <div class="btn-group">
+          {% include "includes/btn-edit.njk" %}
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}

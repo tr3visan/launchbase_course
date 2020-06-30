@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <section class="container">
+    <div class="card">
+      <div class="avatar">
+        <img src="{{member.avatar_url}}" alt="">
+      </div>
+      <div class="details">
+        <form data-element="green" method="POST" action="/members?_method=PUT">
+          <h2 class="h2">Editar Membro</h2>
+
+          {% include "members/fields.njk" %}
+
+          <input
+            value={{member.id}}
+            type="hidden" 
+            name="id" 
+          >
+        </form>
+      </div>
+    </div>
+  </section>
+
+{% include "includes/modal.njk" %}
+
+{% endblock %}

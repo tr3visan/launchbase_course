@@ -1,0 +1,82 @@
+<div class="item">
+  <h4 class="h4">Avatar URL</h4>
+  <input 
+    value="{{ instructor.avatar_url }}"
+    type="text"
+    name="avatar_url"
+    placeholder="http://..." 
+    required
+  >
+</div>
+<div class="item">
+  <h4 class="h4">Nome</h4>
+  <input 
+    value="{{ instructor.name }}"
+    type="text" 
+    name="name" 
+    placeholder="Nome do instrutor"
+    required
+  >
+</div>
+<div class="item">
+  <h4 class="h4">Aniversário</h4>
+  <input 
+    value="{{ instructor.birthday }}"
+    type="date" 
+    name="birthday" 
+    required
+  >
+</div>
+<div class="item">
+  <h4 class="h4">Sexo</h4>
+  <div class="radios">
+    <div class="radio">
+        <input 
+          type="radio" 
+          name="gender" 
+          value="M"
+          {% if instructor.gender == 'M' %}
+            checked
+          {% endif %}
+        >
+      <span>Masculino</span>
+    </div>
+    <div class="radio">
+      <input
+        type="radio" 
+        name="gender" 
+        value="F"
+        {% if instructor.gender == 'F' %}
+          checked
+        {% endif %}
+      >
+      <span>Feminino</span>
+    </div>
+    <div class="radio">
+      <input
+        type="radio" 
+        name="gender" 
+        value="N"
+        {% if instructor.gender == 'N' %}
+          checked
+        {% endif %}
+      >
+      <span>Outro</span>
+    </div>
+  </div>
+</div>
+<div class="item">
+  <h4 class="h4">Modalidade</h4>
+  <input
+    value="{{ instructor.modality }}"
+    type="text" 
+    name="modality" 
+    placeholder="Separe por vírgulas" 
+    required
+  >
+</div>
+
+<div class="btn-group">
+  {% include "includes/btn-salvar.njk" %}
+  {% include "includes/btn-delete-open-modal.njk" %}
+</div>

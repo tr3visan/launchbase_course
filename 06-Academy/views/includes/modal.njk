@@ -1,0 +1,29 @@
+<section class="modal-content">
+  <div class="modal">
+    <div class="modal-head">
+      <i class="material-icons md-24">warning</i>
+      <h3>Deseja remover ?</h3>
+      <p>{{ instructor.name }}</p>
+    </div>
+    <div class="modal-body">
+      <form class="form-delete" method="POST" action="/instructors?_method=DELETE">
+        <input
+          value={{instructor.id}}
+          type="hidden" 
+          name="id" 
+        >
+        <a class="btn cancel-inline" href="#">
+          <i class="material-icons md-18">clear</i>
+          <span>Cancelar</span>
+        </a>
+        <button class="btn delete-inline" type="submit">
+          <i class="material-icons md-18">delete_sweep</i>
+          <span>Deletar</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<script src="/assets/delete.js"></script>
