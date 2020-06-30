@@ -1,0 +1,56 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>ADM School - Professor(a)</title>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <div class="card" data-element="green">
+      <div class="avatar">
+        <img src="{{teacher.avatar_url}}" alt="">
+      </div>
+      <div class="details">
+        <h2 class="h2">Detalhes</h2>
+        <div class="item">
+          <h4 class="h4">Professor</h4>
+          <p>{{teacher.name}}</p>
+        </div>
+        <div class="item">
+          <h4 class="h4">Idade</h4>
+          <p>33</p>
+        </div>
+        <div class="item">
+          <h4 class="h4">Grau de escolaridade</h4>
+          <p>{{ teacher.scholarity }}</p>
+        </div>
+        <div class="item">
+          <h4 class="h4">Tipo de aula</h4>
+          <div class="budgets">
+            <span>{{teacher.typeclass}}</span>
+          </div>
+        </div>
+        <div class="item">
+          <h4 class="h4">Área de atuação</h4>
+          <div class="budgets">
+            {% for item in teacher.ocupations %}
+              <span>{{item}}</span>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="item">
+          <h4 class="h4">Desde</h4>
+          <p>{{teacher.created_at}}</p>
+        </div>
+        
+        <div class="btn-group">
+          <a class="btn edit" href="/teachers/{{teacher.id}}/edit">
+            <i class="material-icons md-18">create</i>
+            <span>Editar</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}

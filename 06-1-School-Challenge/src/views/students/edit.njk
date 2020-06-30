@@ -1,0 +1,32 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>ADM School - Editando</title>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <div class="card">
+      <div class="avatar">
+        <img src="{{student.avatar_url}}" alt="">
+      </div>
+      <div class="details">
+        <form method="POST" action="/students?_method=PUT">
+          <h2 class="h2">Editar Estudante</h2>
+
+          {% include "students/fields.njk" %}
+
+          <input
+            value="{{student.id}}"
+            type="hidden" 
+            name="id" 
+          >
+        </form>
+      </div>
+    </div>
+  </section>
+
+{% include "includes/modal-students.njk" %}
+
+{% endblock %}
+

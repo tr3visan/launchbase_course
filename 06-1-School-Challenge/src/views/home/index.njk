@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>ADM School - Home</title>
+{% endblock %}
+
+{% block content %}
+  <section class="home">
+    <div class="container">
+      <div class="head-content">
+        <div class="head-info">
+          <h1>Automate processes at your school with our Student and Teacher management system.</h1>
+          <p>Our system provides an increase in your productivity by eliminating routine tasks.</p>
+          <div class="btn-group">
+            <a href="/teachers" class="btn primary">
+              <i class="material-icons md-18">login</i>
+              <span>Go to Teachers</span>
+            </a>
+            <a href="/students" class="btn save">
+              <i class="material-icons md-18">login</i>
+              <span>Go to Students</span>
+            </a>
+          </div>
+        </div>
+        <div class="head-hero">
+          <img src="/assets/svg/classroom-rafiki.svg" alt="Ilustração">
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

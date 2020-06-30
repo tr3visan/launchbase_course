@@ -1,0 +1,113 @@
+<div class="item">
+  <h4 class="h4">Avatar URL</h4>
+  <input 
+    value="{{teacher.avatar_url}}"
+    type="text"
+    name="avatar_url"
+    placeholder="http://..." 
+    required
+  >
+</div>
+
+<div class="item">
+  <h4 class="h4">Nome</h4>
+  <input 
+    value="{{teacher.name}}"
+    type="text" 
+    name="name" 
+    placeholder="Nome do professor"
+    required
+  >
+</div>
+
+<div class="item">
+  <h4 class="h4">Idade</h4>
+  <input 
+    value="{{teacher.age}}"
+    type="number" 
+    name="age" 
+    required
+  >
+</div>
+
+<div class="item">
+  <h4 class="h4">Grau de escolaridade</h4>
+  <select name="scholarity">
+    <option 
+      value="Ensino Médio Completo"
+      {% if teacher.scholarity == 'Ensino Médio Completo' %}
+        selected
+      {% endif %}
+    >
+      Ensino Médio Completo
+    </option>
+    <option 
+      value="Ensino Superior Completo"
+      {% if teacher.scholarity == 'Ensino Superior Completo' %}
+        selected
+      {% endif %}
+    >
+      Ensino Superior Completo
+    </option>
+    <option 
+      value="Mestrado"
+      {% if teacher.scholarity == 'Mestrado' %}
+        selected
+      {% endif %}
+    >
+      Mestrado
+    </option>
+    <option 
+      value="Doutorado"
+      {% if teacher.scholarity == 'Doutorado' %}
+        selected
+      {% endif %}
+    >
+      Doutorado
+    </option>
+  </select>
+</div>
+
+<div class="item">
+  <h4 class="h4">Tipo de aula</h4>
+  <div class="radios">
+    <div class="radio">
+        <input
+          type="radio" 
+          name="typeclass" 
+          value="ead"
+          {% if teacher.typeclass == 'ead' %}
+            checked
+          {% endif %}
+        >
+      <span>EAD</span>
+    </div>
+    <div class="radio">
+      <input
+        type="radio" 
+        name="typeclass" 
+        value="presencial"
+        {% if teacher.typeclass == 'presencial' %}
+          checked
+        {% endif %}
+      >
+      <span>Presencial</span>
+    </div>
+  </div>
+</div>
+
+<div class="item">
+  <h4 class="h4">Área de Atuação</h4>
+  <input
+    value="{{teacher.ocupations}}"
+    type="text" 
+    name="ocupations" 
+    placeholder="Separe por vírgulas" 
+    required
+  >
+</div>
+
+<div class="btn-group">
+  {% include "includes/btn-salvar.njk" %}
+  {% include "includes/btn-delete-open-modal.njk" %}
+</div>

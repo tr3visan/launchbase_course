@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  {% block title %}
+    <title>ADM School</title>
+  {% endblock %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+    <nav class="nav-links">
+      <a href="/"><img src="/assets/svg/logo.svg" alt="Logo"></a>
+      <div class="links">
+        <a href="/home">Home</a>
+        <a href="/teachers">Teachers</a>
+        <a href="/students">Students</a>
+      </div>
+    </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>Development by tr<span class="tr3">3</span>visan</p>
+  </footer>
+
+  <script src="/assets/script.js"></script>
+  
+</body>
+</html>

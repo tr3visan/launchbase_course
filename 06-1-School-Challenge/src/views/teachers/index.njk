@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>ADM School - Teachers</title>
+{% endblock %}
+
+{% block content %}
+  <section class="container">
+    <div class="card table-container" data-element="green">
+      <div class="content">
+        <table>
+          <thead>
+            <tr>
+              <th>Professor</th>
+              <th>Área de Atuação</th>
+              <th>Opções</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for teacher in teachers %}
+              <tr>
+                <td>
+                  <span>
+                    <img src="{{teacher.avatar_url}}" alt="{{teacher.name}}">
+                  </span>
+                  <span>{{ teacher.name }}</span>
+                </td>
+                <td>{{ teacher.ocupations }}</td>
+                <td>
+                  <a class="btn-table" href="/teachers/{{teacher.id}}">
+                    <i class="material-icons">folder_shared</i>
+                    <span>ver</span>
+                  </a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <a class="btn add" href="/teachers/create" title="Adicione um Professor">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
+  </section>
+{% endblock %}
